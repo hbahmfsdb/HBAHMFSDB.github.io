@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+        
 
       - name: Setup Ruby ⚙️
         uses: ruby/setup-ruby@v1
@@ -21,6 +22,7 @@ jobs:
       - name: Install dependencies 🔧
         run: |
           gem install bundler
+          bundle config set frozen false
           bundle install
 
       - name: Build the site 🏗️
