@@ -12,7 +12,7 @@
 # in the templates via {{ site.myvariable }}.
 
 theme: minima
-url    : "" # the base hostname & protocol for your site, e.g. http://example.com
+url    : "https://hbahmfsdb.github.io" 
 baseurl: "" # the subpath of your site, e.g. /blog
 
 title      : 计算机应用创新中心
@@ -23,7 +23,7 @@ author     : Your Name
   # path: assets\img\clients\creative-market.jpg
   # height: 60 #height in px, defaults to 52px
 
-locale: "en-US" # See available languages in _data/sitetext.yml
+locale: "zh-CN" # See available languages in _data/sitetext.yml
 
 analytics:
   google: #Google Analytics tracking code here
