@@ -87,10 +87,11 @@ layout: default
                       <i class="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\挑战杯.png" alt="">
+                  <img class="img-fluid" src="./assets/img/active/挑战杯.png" alt="挑战杯">
                 </a>
                 <div class="portfolio-caption">
-                  <h4>挑战杯全国大学生系列科技学术竞赛</h4>
+                  <div style="height: 30px;"></div>
+                  <h5>挑战杯全国大学生系列科技学术竞赛</h5>
                   <p class="text-muted">subtitle</p>
                 </div>
               </div>
@@ -102,10 +103,11 @@ layout: default
                       <i class="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\机器人与人工智能大赛.png" alt="">
+                  <img class="img-fluid" src="./assets/img/active/机器人与人工智能大赛.png" alt="">
                 </a>
                 <div class="portfolio-caption">
-                  <h4>中国机器人及人工智能大赛</h4>
+                  <div style="height: 30px;"></div>
+                  <h5>中国机器人及人工智能大赛</h5>
                   <p class="text-muted">Illustration</p>
                 </div>
               </div>
@@ -117,10 +119,11 @@ layout: default
                       <i class="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\互联网+.jpg" alt="">
+                  <img class="img-fluid" src="./assets/img/active/互联网+.jpg" alt="互联网+">
                 </a>
                 <div class="portfolio-caption">
-                  <h4>中国国际大学生创新大赛</h4>
+                  <div style="height: 30px;"></div>
+                  <h5>中国国际大学生创新大赛</h5>
                   <p class="text-muted">Graphic Design</p>
                 </div>
               </div>
@@ -148,12 +151,11 @@ layout: default
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
               <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">挑战杯全国大学生系列科技学术竞赛</h2>
-              <p class="item-intro text-muted">“挑战杯”是全国大学生最高水平的科技创新竞技场！在这里，创意与智慧交融，梦想与实践同行。
-                我们鼓励每一位成员勇敢参赛，用科技探索未知，用创新点亮未来。每一次挑战，都是一次成长；每一份作品，都是青春的见证。</p>
+              <h3 class="text-uppercase">“挑战杯”全国大学生系列科技学术竞赛</h3>
+              <p class="item-intro text-muted">“挑战杯”竞赛在中国共有两个并列项目，一个是“挑战杯”全国大学生课外学术科技作品竞赛，另一个则是“挑战杯”中国大学生创业计划竞赛。这两个项目的全国竞赛交叉轮流开展，每个项目每两年举办一届。</p>
               <img
                 class="img-fluid d-block mx-auto"
-                src="C:\Users\ccc\project_1\assets\img\active\挑战杯.png"
+                src="./assets/img/active/挑战杯.png"
                 alt="image alt text"
               />
               <p><p>Use this area to describe your project. <strong>Markdown</strong> supported.</p>
@@ -204,11 +206,11 @@ layout: default
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
               <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">Project Threads</h2>
-              <p class="item-intro text-muted">subtitle lorem ipsum dolor sit amet consectetur.</p>
+              <h3 class="text-uppercase">中国机器人及人工智能大赛</h3>
+              <p class="item-intro text-muted">中国机器人及人工智能大赛已被列入中国高等教育学会发布的《2020年全国普通高等学校学科竞赛排行榜》。该赛事涵盖了机器人、人工智能、智能家电、智能文化创意等多个领域，设有创新赛、应用赛、竞技赛和挑战赛等多个比赛项目</p>
               <img
                 class="img-fluid d-block mx-auto"
-                src="C:\Users\ccc\project_1\assets\img\active\机器人与人工智能大赛.png"
+                src="./assets/img/active/机器人与人工智能大赛.png"
                 alt="Shirts on a hanger"
               />
               <p><p>Use this area to describe your project. <strong>Markdown</strong> supported. This entry (project1.md) uses links for the image sources. All other projects in the portfolio use local images. Both work just fine! Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -256,11 +258,11 @@ layout: default
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
               <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">Project Name</h2>
-              <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+              <h3 class="text-uppercase">中国国际大学生创新大赛</h3>
+              <p class="item-intro text-muted">中国国际大学生创新大赛分为赛事分为校赛、市赛、国赛等环节，大赛设主赛道、产业命题赛道和青年红色筑梦之旅赛道等。项目类型有新工科、新医科、新农科、新文科，“人工智能+”等。参赛对象为全日制在校生与毕业5年内的毕业生。</p>
               <img
                 class="img-fluid d-block mx-auto"
-                src="C:\Users\ccc\project_1\assets\img\active\互联网+.jpg"
+                src="./assets/img/active/互联网+.jpg"
                 alt="Keep Exploring"
               />
               <p><p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
