@@ -2,17 +2,6 @@
 layout: default
 ---
 
-
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-  
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Site description">
-  <meta name="author" content="Your Name">
   <link rel="canonical" href="http://localhost:4000/">
 	  
   <title>Your Awesome Website</title>
@@ -56,7 +45,7 @@ layout: default
         <ul class="navbar-nav text-uppercase ml-auto">
         
         
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">比赛活动</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#events">比赛</a></li>
         
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">精彩时刻</a></li>
         
@@ -830,4 +819,4 @@ layout: default
 	  <script src="assets/js/agency.min.js"></script>
 
   </body>
-</html>
+
