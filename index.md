@@ -34,8 +34,8 @@ layout: default
     
   
   <!-- Custom styles for this theme -->
-  <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
-  <link href="assets/css/agency.css" rel="stylesheet" />
+  <link href="assets/css/agency.min.css" rel="stylesheet">
+  <!-- <link href="assets/css/agency.css" rel="stylesheet" /> -->
 
   <!-- Page container change top padding when nav shrinks -->
   
@@ -150,18 +150,18 @@ layout: default
 
         
   
-<!-- Header -->
-<header class="masthead" id="mainHeader">
-  <div class="container">
-    <div class="intro-text">
-      <div class="intro-lead-in">
-        <p>欢迎来到我们工作室！</p>
-      </div>
-      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">Tell Me More</a>
-    </div>
-  </div>
-</header>
-<!-- End Header -->
+      <!-- Header -->
+      <header class="masthead" id="mainHeader">
+        <div class="container">
+          <div class="intro-text">
+            <div class="intro-lead-in">
+              <p>欢迎来到我们工作室！</p>
+            </div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">Tell Me More</a>
+          </div>
+        </div>
+      </header>
+      <!-- End Header -->
  <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
   <div class="container">
