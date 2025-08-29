@@ -3,7 +3,6 @@ layout: default
 ---
 
 
-
 <script>
   // 页面加载时默认显示“学术活动”
   document.addEventListener('DOMContentLoaded', function() {
@@ -85,65 +84,69 @@ layout: default
 
   <style>
     /* 默认大 Header */
-      #mainHeader {
-        padding: 120px 0 80px;
-        background-color: #fff;
-        transition: padding 0.3s ease;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      }
+#mainHeader {
+  padding: 120px 0 80px;
+  background-color: #fff;
+  transition: padding 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 
-      /* 缩小后的 Header */
-      #mainHeader.navbar-shrink {
-        padding: 0px 0;
-      }
+/* 缩小后的 Header */
+#mainHeader.navbar-shrink {
+  padding: 0px 0;
+}
 
-      /* 导航栏缩小 */
-      .navbar-shrink ~ .navbar .navbar-brand,
-      .navbar-shrink ~ .navbar .nav-link {
-        font-size: 0.9rem;
-      }
+/* 导航栏缩小 */
+.navbar-shrink ~ .navbar .navbar-brand,
+.navbar-shrink ~ .navbar .nav-link {
+  font-size: 0.9rem;
+}
 
-      /* 可选：给导航栏也加个缩小效果 */
-      .navbar {
-        transition: padding 0.3s ease;
-      }
+/* 可选：给导航栏也加个缩小效果 */
+.navbar {
+  transition: padding 0.3s ease;
+}
   </style>
 
 
   <body id="page-top">
 
-        <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">重庆工程学院计创中心</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ml-auto">
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('portfolio'); return false;">学术活动</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('timeline'); return false;">荣誉墙</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('join'); return false;">加入我们</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('team'); return false;">闪耀成员</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('teacher'); return false;">优秀指导老师</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('about'); return false;">关于我们</a></li>
-        </ul>
+        
+  
+<!-- Header -->
+<header class="masthead" id="mainHeader">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-lead-in">
+        <p>欢迎来到我们工作室！</p>
       </div>
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">Tell Me More</a>
     </div>
-  </nav>
-  <!-- End Navigation -->
-  
-  <!-- Header -->
-  
-  <header class="masthead">
-    <div class="container">
-      <div class="intro-text"><div class="intro-lead-in"><p>欢迎来到我们工作室！</p>
-</div><div class="intro-heading text-uppercase">
-  <!-- <p>It’s Nice To Meet You</p> -->
-</div><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a></div>
+  </div>
+</header>
+<!-- End Header -->
+ <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">重庆工程学院计创中心</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('portfolio'); return false;">学术活动</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('timeline'); return false;">荣誉墙</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('showcase'); return false;">优秀作品</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('join'); return false;">加入我们</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('team'); return false;">闪耀成员</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('teacher'); return false;">优秀指导老师</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('about'); return false;">关于我们</a></li>
+      </ul>
     </div>
-  </header>
+  </div>
+</nav>
+<!-- End Navigation -->
   
   <!-- End Header -->
    <!-- 主内容区容器 -->
@@ -169,7 +172,7 @@ layout: default
                       <i class="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img class="img-fluid" src="./assets/img/active/挑战杯.png" alt="挑战杯">
+                  <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\挑战杯.png" alt="">
                 </a>
                 <div class="portfolio-caption">
                   <div style="height: 30px;"></div>
@@ -185,10 +188,10 @@ layout: default
                       <i class="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img class="img-fluid" src="./assets/img/active/机器人与人工智能大赛.png" alt="">
+                  <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\机器人与人工智能大赛.png" alt="">
                 </a>
                 <div class="portfolio-caption">
-                  <div style="height: 30px;"></div>
+                    <div style="height: 30px;"></div>
                   <h5>中国机器人及人工智能大赛</h5>
                   <p class="text-muted">Illustration</p>
                 </div>
@@ -201,10 +204,10 @@ layout: default
                       <i class="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img class="img-fluid" src="./assets/img/active/互联网+.jpg" alt="">
+                  <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\互联网+.jpg" alt="">
                 </a>
                 <div class="portfolio-caption">
-                  <div style="height:30px;"></div>
+                  <div style="height: 30px;"></div>  
                   <h5>中国国际大学生创新大赛</h5>
                   <p class="text-muted">Graphic Design</p>
                 </div>
@@ -233,11 +236,12 @@ layout: default
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
               <!-- Project Details Go Here -->
-              <h3 class="text-uppercase">“挑战杯”全国大学生系列科技学术竞赛</h3>
-              <p class="item-intro text-muted">“挑战杯”竞赛在中国共有两个并列项目，一个是“挑战杯”全国大学生课外学术科技作品竞赛，另一个则是“挑战杯”中国大学生创业计划竞赛。这两个项目的全国竞赛交叉轮流开展，每个项目每两年举办一届。</p>
+              <h3 class="text-uppercase">“挑战杯”全国大学生课外学术科技作品竞赛</h3>
+              <p class="item-intro text-muted">“挑战杯”竞赛在中国共有两个并列项目，一个是“挑战杯”全国大学生课外学术科技作品竞赛
+                ，另一个则是“挑战杯”中国大学生创业计划竞赛。这两个项目的全国竞赛交叉轮流开展，每个项目每两年举办一届。</p>
               <img
                 class="img-fluid d-block mx-auto"
-                src="./assets/img/active/挑战杯.png"
+                src="C:\Users\ccc\project_1\assets\img\active\挑战杯.png"
                 alt="image alt text"
               />
               <p><p>Use this area to describe your project. <strong>Markdown</strong> supported.</p>
@@ -266,9 +270,7 @@ layout: default
     </div>
   </div>
 </div>
-
 <!-- 2 -->
-
 <div
   class="portfolio-modal modal fade"
   id="p2"
@@ -289,10 +291,11 @@ layout: default
             <div class="modal-body">
               <!-- Project Details Go Here -->
               <h3 class="text-uppercase">中国机器人及人工智能大赛</h3>
-              <p class="item-intro text-muted">中国机器人及人工智能大赛已被列入中国高等教育学会发布的《2020年全国普通高等学校学科竞赛排行榜》。该赛事涵盖了机器人、人工智能、智能家电、智能文化创意等多个领域，设有创新赛、应用赛、竞技赛和挑战赛等多个比赛项目</p>
+              <p class="item-intro text-muted">中国机器人及人工智能大赛已被列入中国高等教育学会发布的《2020年全国普通高等学校学科竞赛排行榜》。该赛事涵盖了机器人、
+                人工智能、智能家电、智能文化创意等多个领域，设有创新赛、应用赛、竞技赛和挑战赛等多个比赛项目</p>
               <img
                 class="img-fluid d-block mx-auto"
-                src="./assets/img/active/机器人与人工智能大赛.png"
+                src="C:\Users\ccc\project_1\assets\img\active\机器人与人工智能大赛.png"
                 alt="Shirts on a hanger"
               />
               <p><p>Use this area to describe your project. <strong>Markdown</strong> supported. This entry (project1.md) uses links for the image sources. All other projects in the portfolio use local images. Both work just fine! Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -318,9 +321,7 @@ layout: default
     </div>
   </div>
 </div>
-
 <!-- 3 -->
-
 <div
   class="portfolio-modal modal fade"
   id="p3"
@@ -341,10 +342,11 @@ layout: default
             <div class="modal-body">
               <!-- Project Details Go Here -->
               <h3 class="text-uppercase">中国国际大学生创新大赛</h3>
-              <p class="item-intro text-muted">中国国际大学生创新大赛分为赛事分为校赛、市赛、国赛等环节，大赛设主赛道、产业命题赛道和青年红色筑梦之旅赛道等。项目类型有新工科、新医科、新农科、新文科，“人工智能+”等。参赛对象为全日制在校生与毕业5年内的毕业生。</p>
+              <p class="item-intro text-muted">中国国际大学生创新大赛分为赛事分为校赛、市赛、国赛等环节，大赛设主赛道、产业命题赛道和青年红色筑梦之旅赛道等。
+                项目类型有新工科、新医科、新农科、新文科，“人工智能+”等。参赛对象为全日制在校生与毕业5年内的毕业生。</p>
               <img
                 class="img-fluid d-block mx-auto"
-                src="./assets/img/active/互联网+.jpg"
+                src="C:\Users\ccc\project_1\assets\img\active\互联网+.jpg"
                 alt="Keep Exploring"
               />
               <p><p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
@@ -470,7 +472,8 @@ layout: default
           </div>
     </section>
 
-    <section class="page-section bg-light" id="showcase-content" style="display: none;">
+     <!-- ✅ 新增：优秀作品 -->
+  <section class="page-section bg-light" id="showcase-content" style="display: none;">
     <div class="container">
       <div class="text-center">
         <h2 class="section-heading text-uppercase">优秀作品展示</h2>
@@ -482,7 +485,7 @@ layout: default
         <div class="col-lg-8 mb-4">
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" 
-                    src=""D:\1\素材 (1)\宣传视频双语.mp4""
+                    src="D:\青灵智护-基于计算机视觉的植物病虫害检测与健康感知平台\演示视频.mp4"
                     allowfullscreen></iframe>
           </div>
           <h4 class="mt-3">项目名称：基于计算机视觉的植物病虫害检测与健康感知平台</h4>
@@ -499,6 +502,22 @@ layout: default
           <p>基于增强现实技术的校园导航系统，支持3D建筑展示与路径指引。</p>
         </div>
       </div>
+
+      <!-- 可选：更多作品卡片 -->
+      <!-- <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="assets/img/work1.jpg" class="card-img-top" alt="作品1">
+            <div class="card-body">
+              <h5 class="card-title">作品标题</h5>
+              <p class="card-text">简要描述</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+  </section>
   
     <section class="page-section" id="join-content" style="display: none;">
         <div class="container">
@@ -513,76 +532,76 @@ layout: default
             <div class="row">
                 <!-- 1 -->
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal1">
-                            <img class="img-fluid" src="../assets/img/active/前端开发.jpg" alt="前端开发" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">前端开发</div>
-                            <div class="portfolio-caption-subheading text-muted">创建Web页面或APP等前端界面呈现给用户的过程。
-                              通过使用HTML、CSS、JavaScript以及各种技术、框架和解决方案，前端开发实现了互联网产品的用户界面交互。</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 2 -->
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal2">
-                            <img class="img-fluid" src="../assets/img/active/后端开发.jpeg" alt="后端开发" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">后端开发</div>
-                            <div class="portfolio-caption-subheading text-muted">创建在服务器上运行的、不涉及用户界面部分的Web应用程序的过程。后端开发者使用如Java、Golang等语言及其框架、库和解决方案来实现Web应用程序的核心业务逻辑，并向外提供API，使得Web应用能够高效、安全、稳定地运行。</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 3 -->
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal3">
-                            <img class="img-fluid" src="../assets/img/active/全栈开发.jpg" alt="全栈开发" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">全栈开发</div>
-                            <div class="portfolio-caption-subheading text-muted">全栈开发者具备在整个技术堆栈中工作的能力，能够实现从用户界面到后台逻辑的无缝集成。</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal3">
-                            <img class="img-fluid" src="../assets/img/active/嵌入式.jpg" alt="嵌入式" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">嵌入式技术</div>
-                            <div class="portfolio-caption-subheading text-muted">嵌入式系统正趋向于提供更生动的人机交互界面、更好的移植性和自动化、低功耗、智能化等方向发展。</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
                   <div class="portfolio-item">
-                      <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal4">
-                          <img class="img-fluid" src="../assets/img/active/算法.webp" alt="算法" />
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal1">
+                          <img class="img-fluid" src="../assets/img/active/前端开发.jpg" alt="前端开发" />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">算法</div>
-                          <div class="portfolio-caption-subheading text-muted">算法在计算机科学的许多领域中都有广泛的应用，例如机器学习、数据挖掘、网络安全和个性化推荐系统等。</div>
+                          <div class="portfolio-caption-heading">前端开发</div>
+                          <div class="portfolio-caption-subheading text-muted">创建Web页面或APP等前端界面呈现给用户的过程。
+                            通过使用HTML、CSS、JavaScript以及各种技术、框架和解决方案，前端开发实现了互联网产品的用户界面交互。</div>
+                      </div>
+                  </div>
+              </div>
+              <!-- 2 -->
+              <div class="col-lg-4 col-sm-6 mb-4">
+                  <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal2">
+                          <img class="img-fluid" src="../assets/img/active/后端开发.jpeg" alt="后端开发" />
+                      </a>
+                      <div class="portfolio-caption">
+                          <div class="portfolio-caption-heading">后端开发</div>
+                          <div class="portfolio-caption-subheading text-muted">创建在服务器上运行的、不涉及用户界面部分的Web应用程序的过程。后端开发者使用如Java、Golang等语言及其框架、库和解决方案来实现Web应用程序的核心业务逻辑，并向外提供API，使得Web应用能够高效、安全、稳定地运行。</div>
+                      </div>
+                  </div>
+              </div>
+              <!-- 3 -->
+              <div class="col-lg-4 col-sm-6 mb-4">
+                  <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal3">
+                          <img class="img-fluid" src="../assets/img/active/全栈开发.jpg" alt="全栈开发" />
+                      </a>
+                      <div class="portfolio-caption">
+                          <div class="portfolio-caption-heading">全栈开发</div>
+                          <div class="portfolio-caption-subheading text-muted">全栈开发者具备在整个技术堆栈中工作的能力，能够实现从用户界面到后台逻辑的无缝集成。</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 mb-4">
+                  <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal3">
+                          <img class="img-fluid" src="../assets/img/active/嵌入式.jpg" alt="嵌入式" />
+                      </a>
+                      <div class="portfolio-caption">
+                          <div class="portfolio-caption-heading">嵌入式技术</div>
+                          <div class="portfolio-caption-subheading text-muted">嵌入式系统正趋向于提供更生动的人机交互界面、更好的移植性和自动化、低功耗、智能化等方向发展。</div>
                       </div>
                   </div>
               </div>
               <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="portfolio-item">
                     <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal4">
-                        <img class="img-fluid" src="../assets/img/active/大模型.webp" alt="大模型" />
+                        <img class="img-fluid" src="../assets/img/active/算法.webp" alt="算法" />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">AI大模型技术</div>
-                        <div class="portfolio-caption-subheading text-muted">基于Transformer架构的人工智能模型，具备跨模态理解与生成能力。其核心特征包括参数规模巨大（通常达到千亿级）、通过海量数据进行预训练，以及支持多模态任务（如文本、图像、语音的融合）。大模型的应用领域涵盖医疗、教育、金融等多个行业。</div>
+                        <div class="portfolio-caption-heading">算法</div>
+                        <div class="portfolio-caption-subheading text-muted">算法在计算机科学的许多领域中都有广泛的应用，例如机器学习、数据挖掘、网络安全和个性化推荐系统等。</div>
                     </div>
                 </div>
             </div>
-            </div>
-        </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+              <div class="portfolio-item">
+                  <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal4">
+                      <img class="img-fluid" src="../assets/img/active/大模型.webp" alt="大模型" />
+                  </a>
+                  <div class="portfolio-caption">
+                      <div class="portfolio-caption-heading">AI大模型技术</div>
+                      <div class="portfolio-caption-subheading text-muted">基于Transformer架构的人工智能模型，具备跨模态理解与生成能力。其核心特征包括参数规模巨大（通常达到千亿级）、通过海量数据进行预训练，以及支持多模态任务（如文本、图像、语音的融合）。大模型的应用领域涵盖医疗、教育、金融等多个行业。</div>
+                  </div>
+              </div>
+          </div>
+          </div>
+      </div>
     </section>
     <!-- 闪耀的成员 -->
     <section class="page-section" id="team-content" style="display: none;">
@@ -945,4 +964,4 @@ layout: default
 	  <script src="assets/js/agency.min.js"></script>
 
   </body>
-
+</html>
