@@ -1,6 +1,30 @@
 
 
-body::before {
+/* 默认大 Header */
+#mainHeader {
+  padding: 120px 0 80px;
+  background-color: #fff;
+  transition: padding 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* 缩小后的 Header */
+#mainHeader.navbar-shrink {
+  padding: 50px 0;
+}
+
+/* 导航栏缩小 */
+.navbar-shrink ~ .navbar .navbar-brand,
+.navbar-shrink ~ .navbar .nav-link {
+  font-size: 0.9rem;
+}
+
+/* 可选：给导航栏也加个缩小效果 */
+.navbar {
+  transition: padding 0.3s ease;
+}
+
+/* body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
       "Droid Sans Mono", monospace, monospace;
   white-space: pre;
@@ -32,4 +56,4 @@ body::before {
 
 .navbar {
   transition: padding 0.3s ease;
-}
+} */
