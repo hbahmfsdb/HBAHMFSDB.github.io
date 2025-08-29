@@ -17,8 +17,9 @@
 
   <!-- Custom fonts for this template -->
   <link href="assets/css/all.min.css" rel="stylesheet" type="text/css">
+
   
-    
+      
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     
       <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
@@ -35,149 +36,221 @@
   <!-- Page container change top padding when nav shrinks -->
   
 </head>
+<script>
+  // 页面加载时默认显示“学术活动”
+  document.addEventListener('DOMContentLoaded', function() {
+    loadContent('portfolio');
+  });
+
+  // 切换内容的函数
+  function loadContent(sectionId) {
+    // ✅ 确保 'showcase' 在这里
+    const sections = ['portfolio', 'timeline', 'showcase','join', 'team', 'teacher', 'about'];
+    sections.forEach(id => {
+      const el = document.getElementById(id + '-content');
+      if (el) el.style.display = 'none';
+    });
+
+
+    // 显示目标块
+    const target = document.getElementById(sectionId + '-content');
+    if (target) {
+      target.style.display = 'block';
+    }
+
+    // 滚动到内容区顶部
+    const contentArea = document.getElementById('content-area');
+    if (contentArea) {
+      // 滚动到 content-area 的顶部，减去导航栏高度（避免被遮挡）
+      const offsetTop = contentArea.offsetTop;
+      const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+      window.scrollTo({
+        top: offsetTop - navbarHeight, // 留出导航栏空间
+        behavior: 'smooth' // 平滑滚动
+      });
+    }
+  }
+  let isFirstLoad = true;
+
+  function loadContent(sectionId) {
+    // ============ 显示内容逻辑 ============
+    const sections = ['portfolio', 'timeline', 'showcase','join', 'team', 'teacher', 'about'];
+    sections.forEach(id => {
+      const el = document.getElementById(id + '-content');
+      if (el) el.style.display = 'none';
+    });
+
+    const target = document.getElementById(sectionId + '-content');
+    if (target) {
+      target.style.display = 'block';
+    }
+    // ====================================
+
+    // ============ 滚动逻辑 ============
+    if (!isFirstLoad) {
+      const contentArea = document.getElementById('content-area');
+      const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+      window.scrollTo({
+        top: contentArea.offsetTop - navbarHeight,
+        behavior: 'smooth'
+      });
+    } else {
+      isFirstLoad = false;
+    }
+    // =================================
+  }
+    // 监听滚动事件
+  window.addEventListener('scroll', function() {
+    const header = document.getElementById('mainHeader');
+    const scrollPosition = window.scrollY;
+
+    // 当滚动超过 100px 时，添加缩小类
+    if (scrollPosition > 100) {
+      header.classList.add('navbar-shrink');
+    } else {
+      header.classList.remove('navbar-shrink');
+    }
+  });
+  </script>
+
+  <!-- <style>
+    /* 默认大 Header */
+#mainHeader {
+  padding: 120px 0 80px;
+  background-color: #fff;
+  transition: padding 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* 缩小后的 Header */
+#mainHeader.navbar-shrink {
+  padding: 0px 0;
+}
+
+/* 导航栏缩小 */
+.navbar-shrink ~ .navbar .navbar-brand,
+.navbar-shrink ~ .navbar .nav-link {
+  font-size: 0.9rem;
+}
+
+/* 可选：给导航栏也加个缩小效果 */
+.navbar {
+  transition: padding 0.3s ease;
+}
+  </style> -->
 
 
   <body id="page-top">
 
-        <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-	  <a class="navbar-brand js-scroll-trigger" href="#page-top">重庆工程学院计创中心</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ml-auto">
         
-        
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">学术活动</a></li>
-        
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#timeline">荣誉墙</a></li>
-        
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#join">加入我们</a></li>
-        
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">闪耀成员</a></li>
-        
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#teacher">优秀指导老师</a></li>
-
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">关于我们</a></li>
-        
-        
-        </ul>
+  
+<!-- Header -->
+<header class="masthead" id="mainHeader">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-lead-in">
+        <p>欢迎来到我们工作室！</p>
       </div>
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">Tell Me More</a>
     </div>
-  </nav>
-  <!-- End Navigation -->
-  
-  <!-- Header -->
-  
-  <header class="masthead">
-    <div class="container">
-      <div class="intro-text"><div class="intro-lead-in"><p>欢迎来到我们工作室！</p>
-</div><div class="intro-heading text-uppercase">
-  <!-- <p>It’s Nice To Meet You</p> -->
-</div><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a></div>
+  </div>
+</header>
+<!-- End Header -->
+ <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">重庆工程学院计创中心</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('portfolio'); return false;">学术活动</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('timeline'); return false;">荣誉墙</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('showcase'); return false;">优秀作品</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('join'); return false;">加入我们</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('team'); return false;">闪耀成员</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('teacher'); return false;">优秀指导老师</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadContent('about'); return false;">关于我们</a></li>
+      </ul>
     </div>
-  </header>
+  </div>
+</nav>
+<!-- End Navigation -->
   
   <!-- End Header -->
-
-
-<!-- Modal 1 -->
-<!-- <div class="portfolio-modal modal fade" id="eventModal1" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal"><img src="C:\Users\ccc\project_1\assets\img\portfolio\06-thumbnail.jpg" alt="Close modal" /></div>
-          <div class="container">
-              <div class="row justify-content-center">
-                  <div class="col-lg-8">
-                      <div class="modal-body">
-                          <h2>编程马拉松</h2>
-                          <p class="item-intro text-muted">在限定时间内解决尽可能多的编程问题。</p>
-                          <img class="img-fluid d-block mx-auto" src="assets/img/events/event1.jpg" alt="编程马拉松" />
-                          <p>参与编程马拉松，与志同道合的朋友一起，在48小时内完成一个项目或解决一系列挑战。这不仅考验了你的技术能力，还锻炼了团队合作精神。</p>
-                          <button class="btn btn-primary" data-bs-dismiss="modal" type="button">
-                              <i class="fas fa-times me-1"></i>
-                              关闭
-                          </button>
-                      </div>
-                  </div>
+   <!-- 主内容区容器 -->
+<div id="content-area">
+    <!-- 这里会动态加载内容 -->
+    <!-- 默认显示 portfolio -->
+    <section class="page-section" id="portfolio-content">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase"><p>比赛介绍</p>
+        </h2>
+                <h3 class="section-subheading text-muted"><p>Lorem ipsum dolor sit amet consectetur.</p>
+        </h3>
               </div>
-          </div>
-      </div>
-  </div>
-</div> -->
-<!-- Modal 2 和 Modal 3 类似，请根据需要创建 -->
-
-<!-- End Services -->
-<!-- 学术活动 -->
-
-<section class="bg-light page-section" id="portfolio">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase"><p>比赛介绍</p>
-</h2>
-        <h3 class="section-subheading text-muted"><p>Lorem ipsum dolor sit amet consectetur.</p>
-</h3>
-      </div>
-    </div>
-    <div class="row">
-	
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#p1">
-          <div class="portfolio-hover">
-            <div class="portfolio-hover-content">
-              <i class="fas fa-plus fa-3x"></i>
+            </div>
+            <div class="row">
+            
+              <div class="col-md-4 col-sm-6 portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#p1">
+                  <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                      <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\挑战杯.png" alt="">
+                </a>
+                <div class="portfolio-caption">
+                  <div style="height: 30px;"></div>
+                  <h5>挑战杯全国大学生系列科技学术竞赛</h5>
+                  <p class="text-muted">subtitle</p>
+                </div>
+              </div>
+            
+              <div class="col-md-4 col-sm-6 portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#p2">
+                  <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                      <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\机器人与人工智能大赛.png" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <div style="height: 30px;"></div>
+                  <h5>中国机器人及人工智能大赛</h5>
+                  <p class="text-muted">Illustration</p>
+                </div>
+              </div>
+            
+              <div class="col-md-4 col-sm-6 portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#p3">
+                  <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                      <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\互联网+.jpg" alt="">
+                </a>
+                <div class="portfolio-caption">
+                  <div style="height: 30px;"></div>  
+                  <h5>中国国际大学生创新大赛</h5>
+                  <p class="text-muted">Graphic Design</p>
+                </div>
+              </div>
+            
             </div>
           </div>
-          <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\挑战杯.png" alt="">
-        </a>
-        <div class="portfolio-caption">
-          <h4>挑战杯全国大学生系列科技学术竞赛</h4>
-          <p class="text-muted">subtitle</p>
-        </div>
-      </div>
-	
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#p2">
-          <div class="portfolio-hover">
-            <div class="portfolio-hover-content">
-              <i class="fas fa-plus fa-3x"></i>
-            </div>
-          </div>
-          <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\机器人与人工智能大赛.png" alt="">
-        </a>
-        <div class="portfolio-caption">
-          <h4>中国机器人及人工智能大赛</h4>
-          <p class="text-muted">Illustration</p>
-        </div>
-      </div>
-	
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#p3">
-          <div class="portfolio-hover">
-            <div class="portfolio-hover-content">
-              <i class="fas fa-plus fa-3x"></i>
-            </div>
-          </div>
-          <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\互联网+.jpg" alt="">
-        </a>
-        <div class="portfolio-caption">
-          <h4>中国国际大学生创新大赛</h4>
-          <p class="text-muted">Graphic Design</p>
-        </div>
-      </div>
-	
-    </div>
-  </div>
-</section>
-
-<!-- Portfolio Modals -->
-
-
-<div
+      <div class="container">...</div>
+    </section>
+    <div
   class="portfolio-modal modal fade"
   id="p1"
   tabindex="-1"
@@ -196,9 +269,9 @@
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
               <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">挑战杯全国大学生系列科技学术竞赛</h2>
-              <p class="item-intro text-muted">“挑战杯”是全国大学生最高水平的科技创新竞技场！在这里，创意与智慧交融，梦想与实践同行。
-                我们鼓励每一位成员勇敢参赛，用科技探索未知，用创新点亮未来。每一次挑战，都是一次成长；每一份作品，都是青春的见证。</p>
+              <h3 class="text-uppercase">“挑战杯”全国大学生课外学术科技作品竞赛</h3>
+              <p class="item-intro text-muted">“挑战杯”竞赛在中国共有两个并列项目，一个是“挑战杯”全国大学生课外学术科技作品竞赛
+                ，另一个则是“挑战杯”中国大学生创业计划竞赛。这两个项目的全国竞赛交叉轮流开展，每个项目每两年举办一届。</p>
               <img
                 class="img-fluid d-block mx-auto"
                 src="C:\Users\ccc\project_1\assets\img\active\挑战杯.png"
@@ -230,9 +303,7 @@
     </div>
   </div>
 </div>
-
 <!-- 2 -->
-
 <div
   class="portfolio-modal modal fade"
   id="p2"
@@ -252,8 +323,9 @@
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
               <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">Project Threads</h2>
-              <p class="item-intro text-muted">subtitle lorem ipsum dolor sit amet consectetur.</p>
+              <h3 class="text-uppercase">中国机器人及人工智能大赛</h3>
+              <p class="item-intro text-muted">中国机器人及人工智能大赛已被列入中国高等教育学会发布的《2020年全国普通高等学校学科竞赛排行榜》。该赛事涵盖了机器人、
+                人工智能、智能家电、智能文化创意等多个领域，设有创新赛、应用赛、竞技赛和挑战赛等多个比赛项目</p>
               <img
                 class="img-fluid d-block mx-auto"
                 src="C:\Users\ccc\project_1\assets\img\active\机器人与人工智能大赛.png"
@@ -282,9 +354,7 @@
     </div>
   </div>
 </div>
-
 <!-- 3 -->
-
 <div
   class="portfolio-modal modal fade"
   id="p3"
@@ -304,8 +374,9 @@
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
               <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">Project Name</h2>
-              <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+              <h3 class="text-uppercase">中国国际大学生创新大赛</h3>
+              <p class="item-intro text-muted">中国国际大学生创新大赛分为赛事分为校赛、市赛、国赛等环节，大赛设主赛道、产业命题赛道和青年红色筑梦之旅赛道等。
+                项目类型有新工科、新医科、新农科、新文科，“人工智能+”等。参赛对象为全日制在校生与毕业5年内的毕业生。</p>
               <img
                 class="img-fluid d-block mx-auto"
                 src="C:\Users\ccc\project_1\assets\img\active\互联网+.jpg"
@@ -335,404 +406,444 @@
   </div>
 </div>
 
-<!-- 荣誉墙 -->
-<section class="bg-light page-section" id="timeline">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase"><p>展出荣誉</p>
-</h2>
-        <h3 class="section-subheading text-muted">展出属于我们的荣耀</h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <ul class="timeline">
-              <li>
-            <div class="timeline-image">
-              <img class="rounded-circle img-fluid" src="assets/img/timeline/1.jpg" alt="">
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4><p>2009-2011</p>
-</h4>
-                <h4 class="subheading">Our Humble Beginnings</h4>
-              </div>
-              <div class="timeline-body">
-                <div class="text-muted"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-</div>
-              </div>
-            </div>
-          </li>
     
-              <li class="timeline-inverted">
+  
+    <section class="page-section" id="timeline-content" style="display: none;">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase"><p>展出荣誉</p>
+        </h2>
+                <h3 class="section-subheading text-muted">展出属于我们的荣耀</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <ul class="timeline">
+                      <li>
+                    <div class="timeline-image">
+                      <img class="rounded-circle img-fluid" src="assets/img/timeline/1.jpg" alt="">
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4><p>2009-2011</p>
+        </h4>
+                        <h4 class="subheading">Our Humble Beginnings</h4>
+                      </div>
+                      <div class="timeline-body">
+                        <div class="text-muted"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+        </div>
+                      </div>
+                    </div>
+                  </li>
             
-          <div class="timeline-image">
-              <img class="rounded-circle img-fluid" src="assets/img/timeline/2.jpg" alt="">
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4><p>March 2011</p>
-</h4>
-                <h4 class="subheading">An Agency is Born</h4>
-              </div>
-              <div class="timeline-body">
-                <div class="text-muted"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-</div>
-              </div>
-            </div>
-          </li>
-    
-              <li>
-            <div class="timeline-image">
-              <img class="rounded-circle img-fluid" src="assets/img/timeline/3.jpg" alt="image alt text">
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4><p>2019</p>
-</h4>
-                <h4 class="subheading">Jekyll Theme is created</h4>
-              </div>
-              <div class="timeline-body">
-                <div class="text-muted"><p>Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation.</p>
-</div>
-              </div>
-            </div>
-          </li>
-    
-              <li class="timeline-inverted">
+                      <li class="timeline-inverted">
+                    
+                  <div class="timeline-image">
+                      <img class="rounded-circle img-fluid" src="assets/img/timeline/2.jpg" alt="">
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4><p>March 2011</p>
+        </h4>
+                        <h4 class="subheading">An Agency is Born</h4>
+                      </div>
+                      <div class="timeline-body">
+                        <div class="text-muted"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+        </div>
+                      </div>
+                    </div>
+                  </li>
             
-          <div class="timeline-image">
-              <img class="rounded-circle img-fluid" src="assets/img/timeline/4.jpg" alt="">
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4><p>2009-2011</p>
-</h4>
-                <h4 class="subheading">Title</h4>
+                      <li>
+                    <div class="timeline-image">
+                      <img class="rounded-circle img-fluid" src="assets/img/timeline/3.jpg" alt="image alt text">
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4><p>2019</p>
+        </h4>
+                        <h4 class="subheading">Jekyll Theme is created</h4>
+                      </div>
+                      <div class="timeline-body">
+                        <div class="text-muted"><p>Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation.</p>
+        </div>
+                      </div>
+                    </div>
+                  </li>
+            
+                      <li class="timeline-inverted">
+                    
+                  <div class="timeline-image">
+                      <img class="rounded-circle img-fluid" src="assets/img/timeline/4.jpg" alt="">
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4><p>2009-2011</p>
+        </h4>
+                        <h4 class="subheading">Title</h4>
+                      </div>
+                      <div class="timeline-body">
+                        <div class="text-muted"><p>Your description here, <strong>Markdown</strong> is fully supported.</p>
+        </div>
+                      </div>
+                    </div>
+                  </li>
+              
+                  
+              
+            <li class="timeline-inverted">
+                    <div class="timeline-image">
+                      <h4>期待你的<br> 加入增添 <br>更多荣誉</h4>
+                    </div>
+                  </li>
+            
+        
+                </ul>
               </div>
-              <div class="timeline-body">
-                <div class="text-muted"><p>Your description here, <strong>Markdown</strong> is fully supported.</p>
-</div>
-              </div>
             </div>
-          </li>
-      
-          
-      
-    <li class="timeline-inverted">
-            <div class="timeline-image">
-              <h4>期待你的<br> 加入增添 <br>更多荣誉</h4>
-            </div>
-          </li>
-    
+          </div>
+    </section>
 
-        </ul>
+     <!-- ✅ 新增：优秀作品 -->
+  <section class="page-section bg-light" id="showcase-content" style="display: none;">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">优秀作品展示</h2>
+        <h3 class="section-subheading text-muted">我们引以为傲的项目与创新成果</h3>
       </div>
+
+      <!-- 视频演示区 -->
+      <div class="row justify-content-center">
+        <div class="col-lg-8 mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" 
+                    src="D:\青灵智护-基于计算机视觉的植物病虫害检测与健康感知平台\演示视频.mp4"
+                    allowfullscreen></iframe>
+          </div>
+          <h4 class="mt-3">项目名称：基于计算机视觉的植物病虫害检测与健康感知平台</h4>
+          <p>这是一个通过AI诊断算法、数据驱动决策和全周期可视化追溯，形成覆盖植物健康管理、科学养护执行与生长历程回溯的完整服务体系。</p>
+        </div>
+
+        <div class="col-lg-8 mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" 
+                    src="" 
+                    allowfullscreen></iframe>
+          </div>
+          <h4 class="mt-3">项目名称：AR校园导览平台</h4>
+          <p>基于增强现实技术的校园导航系统，支持3D建筑展示与路径指引。</p>
+        </div>
+      </div>
+
+      <!-- 可选：更多作品卡片 -->
+      <!-- <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="assets/img/work1.jpg" class="card-img-top" alt="作品1">
+            <div class="card-body">
+              <h5 class="card-title">作品标题</h5>
+              <p class="card-text">简要描述</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
     </div>
-  </div>
-</section>
-
-
-<!-- End Portfolio Modals -->
-<!-- 加入我们 -->
-<section class="page-section bg-light" id="join">
-  <div class="container">
-      <div class="text-center">
-          <h2 class="section-heading text-uppercase">加入我们</h2>
-          <h3 class="section-subheading text-muted">探索我们工作室的精彩瞬间！</h3>
-          <hr style="margin: 2px auto; border: 1px solid black; width: 90%; max-width: 700px;">
-      </div>
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase"></h2>
-      </div>
-      <div class="row">
-          <!-- 比赛1 -->
-          <div class="col-lg-4 col-sm-6 mb-4">
-              <div class="portfolio-item">
-                  <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal1">
-                      <img class="img-fluid" src="../assets/img/portfolio/06-thumbnail.jpg" alt="前端技术栈" />
-                  </a>
-                  <div class="portfolio-caption">
-                      <div class="portfolio-caption-heading">前端技术栈</div>
-                      <div class="portfolio-caption-subheading text-muted">挑战极限，创造奇迹</div>
+  </section>
+  
+    <section class="page-section" id="join-content" style="display: none;">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">加入我们</h2>
+                <h3 class="section-subheading text-muted">探索我们工作室的精彩瞬间！</h3>
+                <hr style="margin: 2px auto; border: 1px solid black; width: 90%; max-width: 700px;">
+            </div>
+            <div class="text-center">
+              <h2 class="section-heading text-uppercase"></h2>
+            </div>
+            <div class="row">
+                <!-- 1 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal1">
+                          <img class="img-fluid" src="../assets/img/active/前端开发.jpg" alt="前端开发" />
+                      </a>
+                      <div class="portfolio-caption">
+                          <div class="portfolio-caption-heading">前端开发</div>
+                          <div class="portfolio-caption-subheading text-muted">创建Web页面或APP等前端界面呈现给用户的过程。
+                            通过使用HTML、CSS、JavaScript以及各种技术、框架和解决方案，前端开发实现了互联网产品的用户界面交互。</div>
+                      </div>
                   </div>
               </div>
-          </div>
-          <!-- 比赛2 -->
-          <div class="col-lg-4 col-sm-6 mb-4">
-              <div class="portfolio-item">
-                  <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal2">
-                      <img class="img-fluid" src="../assets/img/portfolio/06-thumbnail.jpg" alt="机器人与人工智能大赛" />
-                  </a>
-                  <div class="portfolio-caption">
-                      <div class="portfolio-caption-heading">1</div>
-                      <div class="portfolio-caption-subheading text-muted">111</div>
+              <!-- 2 -->
+              <div class="col-lg-4 col-sm-6 mb-4">
+                  <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal2">
+                          <img class="img-fluid" src="../assets/img/active/后端开发.jpeg" alt="后端开发" />
+                      </a>
+                      <div class="portfolio-caption">
+                          <div class="portfolio-caption-heading">后端开发</div>
+                          <div class="portfolio-caption-subheading text-muted">创建在服务器上运行的、不涉及用户界面部分的Web应用程序的过程。后端开发者使用如Java、Golang等语言及其框架、库和解决方案来实现Web应用程序的核心业务逻辑，并向外提供API，使得Web应用能够高效、安全、稳定地运行。</div>
+                      </div>
                   </div>
               </div>
-          </div>
-          <!-- 比赛3 -->
-          <div class="col-lg-4 col-sm-6 mb-4">
-              <div class="portfolio-item">
-                  <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal3">
-                      <img class="img-fluid" src="../assets/img/portfolio/06-thumbnail.jpg" alt="互联网+" />
-                  </a>
-                  <div class="portfolio-caption">
-                      <div class="portfolio-caption-heading">2</div>
-                      <div class="portfolio-caption-subheading text-muted">2222222</div>
+              <!-- 3 -->
+              <div class="col-lg-4 col-sm-6 mb-4">
+                  <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal3">
+                          <img class="img-fluid" src="../assets/img/active/全栈开发.jpg" alt="全栈开发" />
+                      </a>
+                      <div class="portfolio-caption">
+                          <div class="portfolio-caption-heading">全栈开发</div>
+                          <div class="portfolio-caption-subheading text-muted">全栈开发者具备在整个技术堆栈中工作的能力，能够实现从用户界面到后台逻辑的无缝集成。</div>
+                      </div>
                   </div>
               </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4">
-            <div class="portfolio-item">
-                <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal4">
-                    <img class="img-fluid" src="../assets/img/portfolio/06-thumbnail.jpg" alt="互联网+" />
-                </a>
-                <div class="portfolio-caption">
-                    <div class="portfolio-caption-heading">3</div>
-                    <div class="portfolio-caption-subheading text-muted">3</div>
+              <div class="col-lg-4 col-sm-6 mb-4">
+                  <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal3">
+                          <img class="img-fluid" src="../assets/img/active/嵌入式.jpg" alt="嵌入式" />
+                      </a>
+                      <div class="portfolio-caption">
+                          <div class="portfolio-caption-heading">嵌入式技术</div>
+                          <div class="portfolio-caption-subheading text-muted">嵌入式系统正趋向于提供更生动的人机交互界面、更好的移植性和自动化、低功耗、智能化等方向发展。</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal4">
+                        <img class="img-fluid" src="../assets/img/active/算法.webp" alt="算法" />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">算法</div>
+                        <div class="portfolio-caption-subheading text-muted">算法在计算机科学的许多领域中都有广泛的应用，例如机器学习、数据挖掘、网络安全和个性化推荐系统等。</div>
+                    </div>
                 </div>
             </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+              <div class="portfolio-item">
+                  <a class="portfolio-link" data-bs-toggle="modal" href="#eventModal4">
+                      <img class="img-fluid" src="../assets/img/active/大模型.webp" alt="大模型" />
+                  </a>
+                  <div class="portfolio-caption">
+                      <div class="portfolio-caption-heading">AI大模型技术</div>
+                      <div class="portfolio-caption-subheading text-muted">基于Transformer架构的人工智能模型，具备跨模态理解与生成能力。其核心特征包括参数规模巨大（通常达到千亿级）、通过海量数据进行预训练，以及支持多模态任务（如文本、图像、语音的融合）。大模型的应用领域涵盖医疗、教育、金融等多个行业。</div>
+                  </div>
+              </div>
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- 闪耀的成员 -->
+    <section class="page-section" id="team-content" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading text-uppercase">闪耀的成员</h2>
+              <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+          
+            <div class="col-sm-4">
+              <div class="team-member">
+                <img class="mx-auto rounded-circle" src="assets/img/team/zhangtao.png" alt="">
+                <h4>张涛</h4>
+                <p class="text-muted">就业单位：北京交通大学 晓多科技</p>
+            <p class="text-muted">研究方向：多模态大模型增强检索技术 多智能体协同</p>
+                <ul class="list-inline social-buttons">
+                
+                  <li class="list-inline-item">
+                <a href="https://github.com/1692775560">
+                  <i class="fab fa-github"></i>
+                </a>
+              </li>
+                
+                
+                </ul>
+              </div>
+            </div>
+        
+        
+          
+            <div class="col-sm-4">
+              <div class="team-member">
+                <img class="mx-auto rounded-circle" src="assets/img/team/500x500.jpg" alt="">
+                <h4>Diana Perterson</h4>
+                <p class="text-muted">Lead Developer</p>
+                <ul class="list-inline social-buttons">
+                
+                  <li class="list-inline-item">
+                    <a href="https://twitter.com">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                
+                  <li class="list-inline-item">
+                    <a href="https://facebook.com">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                
+                  <li class="list-inline-item">
+                    <a href="https://linkedin.com">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </li>
+                
+                </ul>
+              </div>
+            </div>
+          
+          </div>
+          <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+              <div class="large text-muted"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. <strong>Markdown</strong> supported.</p>
+        </div>
+            </div>
+          </div>
+        </div>
+        </section>
+        <!-- 优秀指导老师 -->
+
+       <!-- 优秀指导老师 -->
+<section class="page-section" id="teacher-content" style="display: none;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">优秀指导老师</h2>
+          <h3 class="section-subheading text-muted">他们用智慧点亮创新之路，用热情点燃学生梦想</h3>
         </div>
       </div>
-  </div>
-</section>
-
-
-<!-- About -->
-
-<section class="page-section" id="about">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">关于我们</h2>
-        <h3 class="section-subheading text-muted">我们的故事</h3>
+      <div class="row d-flex justify-content-center">
+        
+        <!-- 老师1 -->
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="assets/img/teachers/liwei.png" alt="李伟老师">
+            <h4>李伟</h4>
+            <p class="text-muted">职称：副教授 | 研究方向：人工智能与智能系统</p>
+            <p class="text-muted">指导成果：连续5年带领学生获“挑战杯”国家级奖项</p>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="mailto:liwei@cqie.edu.cn">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://scholar.google.com/cn" target="_blank">
+                  <i class="fas fa-graduation-cap"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- 老师2 -->
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="assets/img/teachers/zhaoming.png" alt="赵明老师">
+            <h4>赵明</h4>
+            <p class="text-muted">职称：教授 | 研究方向：大数据与云计算</p>
+            <p class="text-muted">教学理念：以赛促学，以研促教，培养创新型人才</p>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="mailto:zhaoming@cqie.edu.cn">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://researchgate.net" target="_blank">
+                  <i class="fas fa-graduation-cap"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- 老师3 -->
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="assets/img/teachers/wangfang.jpg" alt="王芳老师">
+            <h4>王芳</h4>
+            <p class="text-muted">职称：讲师 | 研究方向：人机交互与用户体验</p>
+            <p class="text-muted">曾指导学生获“互联网+”大赛全国金奖</p>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="mailto:wangfang@cqie.edu.cn">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://linkedin.com" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
       </div>
-    </div>
-    <div>
-      
-    </div>
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <div class="large text-muted">
-          <p>在数字时代，技术革新日新月异，为了激发学生的创造力、培养其解决实际问题的能力，学校成立了计算机应用创新中心。
-            本中心旨在为全校师生提供一个开放、协作的环境，促进信息技术的应用与创新。</p>
-          <p>无论你是初学者还是有经验的开发者，只要你对计算机技术和创新充满热情，
-          我们都欢迎你的加入！在这里，你可以找到志同道合的朋友，共同成长进步。让我们一起用代码改变世界！</p>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="large text-muted">
+            我们的指导老师不仅是知识的传授者，更是创新路上的引路人。他们无私奉献，悉心指导，助力每一位学生成长为卓越的科技人才。
+          </p>
         </div>
       </div>
     </div>
+  </section>
+
+    <!-- About -->
+
+    <section class="page-section" id="about-content" style="display: none;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">关于我们</h2>
+          <h3 class="section-subheading text-muted">我们的故事</h3>
+        </div>
+      </div>
+      <div>
+        
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <div class="large text-muted">
+            <p>在数字时代，技术革新日新月异，为了激发学生的创造力、培养其解决实际问题的能力，学校成立了计算机应用创新中心。
+              本中心旨在为全校师生提供一个开放、协作的环境，促进信息技术的应用与创新。</p>
+            <p>无论你是初学者还是有经验的开发者，只要你对计算机技术和创新充满热情，
+            我们都欢迎你的加入！在这里，你可以找到志同道合的朋友，共同成长进步。让我们一起用代码改变世界！</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+
   </div>
-</section>
+
+
+
+
+
+
 
 <!-- End About -->
 
 
-<!-- Team -->
-
-<section class="page-section" id="team">
-<div class="container">
-  <div class="row">
-	<div class="col-lg-12 text-center">
-	  <h2 class="section-heading text-uppercase">闪耀的成员</h2>
-	  <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-	</div>
-  </div>
-  <div class="row d-flex justify-content-center">
-  
-	<div class="col-sm-4">
-	  <div class="team-member">
-		<img class="mx-auto rounded-circle" src="assets/img/team/zhangtao.png" alt="">
-		<h4>张涛</h4>
-		<p class="text-muted">就业单位：北京交通大学 晓多科技</p>
-    <p class="text-muted">研究方向：多模态大模型增强检索技术 多智能体协同</p>
-		<ul class="list-inline social-buttons">
-		
-		  <li class="list-inline-item">
-        <a href="https://github.com/1692775560">
-          <i class="fab fa-github"></i>
-        </a>
-      </li>
-		
-		  <!-- <li class="list-inline-item">
-			<a href="https://facebook.com">
-			  <i class="fab fa-facebook-f"></i>
-			</a>
-		  </li>
-		
-		  <li class="list-inline-item">
-			<a href="https://linkedin.com">
-			  <i class="fab fa-linkedin-in"></i>
-			</a>
-		  </li> -->
-		
-		</ul>
-	  </div>
-	</div>
-
-
-  
-	<div class="col-sm-4">
-	  <div class="team-member">
-		<img class="mx-auto rounded-circle" src="assets/img/team/500x500.jpg" alt="">
-		<h4>Diana Perterson</h4>
-		<p class="text-muted">Lead Developer</p>
-		<ul class="list-inline social-buttons">
-		
-		  <li class="list-inline-item">
-			<a href="https://twitter.com">
-			  <i class="fab fa-twitter"></i>
-			</a>
-		  </li>
-		
-		  <li class="list-inline-item">
-			<a href="https://facebook.com">
-			  <i class="fab fa-facebook-f"></i>
-			</a>
-		  </li>
-		
-		  <li class="list-inline-item">
-			<a href="https://linkedin.com">
-			  <i class="fab fa-linkedin-in"></i>
-			</a>
-		  </li>
-		
-		</ul>
-	  </div>
-	</div>
-  
-  </div>
-  <div class="row">
-	<div class="col-lg-8 mx-auto text-center">
-	  <div class="large text-muted"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. <strong>Markdown</strong> supported.</p>
-</div>
-	</div>
-  </div>
-</div>
-</section>
-
-<!-- End Team -->
-
-<!-- Clients -->
-
-  <section class="py-5" id="clients">
-    <div class="container">
-      <div class="row" >
-	    
-        <div class="col-md-3 col-sm-6">
-          <a href="https://github.com/raviriley/agency-jekyll-theme">
-            <img class="img-fluid d-block mx-auto" src="assets/img/clients/envato.jpg" alt="envato" style="max-height: 100px">
-          </a>
-        </div>
-	    
-        <div class="col-md-3 col-sm-6">
-          <a href="https://github.com/raviriley/agency-jekyll-theme">
-            <img class="img-fluid d-block mx-auto" src="assets/img/clients/designmodo.jpg" alt="designmodo" style="max-height: 100px">
-          </a>
-        </div>
-	    
-        <div class="col-md-3 col-sm-6">
-          <a href="https://github.com/raviriley/agency-jekyll-theme">
-            <img class="img-fluid d-block mx-auto" src="assets/img/clients/themeforest.jpg" alt="themeforest" style="max-height: 100px">
-          </a>
-        </div>
-	    
-        <div class="col-md-3 col-sm-6">
-          <a href="https://github.com/raviriley/agency-jekyll-theme">
-            <img class="img-fluid d-block mx-auto" src="assets/img/clients/creative-market.jpg" alt="Creative Market" style="max-height: 100px">
-          </a>
-        </div>
-	    
-      </div>
-    </div>
-  </section>
-
-<!-- 优秀指导老师 -->
-
-<section class="page-section" id="teacher">
-  <div class="container">
-    <div class="row">
-    <div class="col-lg-12 text-center">
-      <h2 class="section-heading text-uppercase">闪耀的成员</h2>
-      <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-    </div>
-    </div>
-    <div class="row d-flex justify-content-center">
-    
-    <div class="col-sm-4">
-      <div class="team-member">
-      <img class="mx-auto rounded-circle" src="assets/img/team/zhangtao.png" alt="">
-      <h4>张涛</h4>
-      <p class="text-muted">就业单位：北京交通大学 晓多科技</p>
-      <p class="text-muted">研究方向：多模态大模型增强检索技术 多智能体协同</p>
-      <ul class="list-inline social-buttons">
-      
-        <li class="list-inline-item">
-          <a href="https://github.com/1692775560">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-      
-        <!-- <li class="list-inline-item">
-        <a href="https://facebook.com">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        </li>
-      
-        <li class="list-inline-item">
-        <a href="https://linkedin.com">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        </li> -->
-      
-      </ul>
-      </div>
-    </div>
-  
-  
-    
-    <div class="col-sm-4">
-      <div class="team-member">
-      <img class="mx-auto rounded-circle" src="assets/img/team/500x500.jpg" alt="">
-      <h4>Diana Perterson</h4>
-      <p class="text-muted">Lead Developer</p>
-      <ul class="list-inline social-buttons">
-      
-        <li class="list-inline-item">
-        <a href="https://twitter.com">
-          <i class="fab fa-twitter"></i>
-        </a>
-        </li>
-      
-        <li class="list-inline-item">
-        <a href="https://facebook.com">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        </li>
-      
-        <li class="list-inline-item">
-        <a href="https://linkedin.com">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        </li>
-      
-      </ul>
-      </div>
-    </div>
-    
-    </div>
-    <div class="row">
-    <div class="col-lg-8 mx-auto text-center">
-      <div class="large text-muted"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. <strong>Markdown</strong> supported.</p>
-  </div>
-    </div>
-    </div>
-  </div>
-  </section>
 
 
 
-<!-- <section class="page-section" id="contact">
+
+
+
+
+<section class="page-section" id="contact">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -792,7 +903,7 @@
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 <!-- End Contact -->
 

@@ -3,7 +3,6 @@ layout: default
 ---
 
 
-<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -90,7 +89,7 @@ layout: default
     if (target) {
       target.style.display = 'block';
     }
-    // ====================================
+    
 
     // ============ 滚动逻辑 ============
     if (!isFirstLoad) {
@@ -104,7 +103,7 @@ layout: default
     } else {
       isFirstLoad = false;
     }
-    // =================================
+    
   }
     // 监听滚动事件
   window.addEventListener('scroll', function() {
@@ -120,7 +119,7 @@ layout: default
   });
   </script>
 
-  <style>
+  <!-- <style>
     /* 默认大 Header */
 #mainHeader {
   padding: 120px 0 80px;
@@ -144,7 +143,7 @@ layout: default
 .navbar {
   transition: padding 0.3s ease;
 }
-  </style>
+  </style> -->
 
 
   <body id="page-top">
