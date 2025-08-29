@@ -1,9 +1,4 @@
-/* Error: expected "{".
- *   ,
- * 3 | @charset "utf-8";
- *   |                 ^
- *   '
- *   assets\css\agency.scss 3:17  root stylesheet */
+
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,9 +8,9 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a   \2577 \a 3 \2502  @charset "utf-8";\d\a   \2502                  ^\a   \2575 \a   assets\\css\\agency.scss 3:17  root stylesheet';
+  content: 'Error: expected "{".\a   \2577 \a 3 \2502  @charset "utf-8";\d\a   \2502                  ^\a   \2575 \a   assets\\css\\agency.css 3:17  root stylesheet';
 }
-/* 默认大 Header */
+
 #mainHeader {
   padding: 120px 0 80px;
   background-color: #fff;
@@ -23,18 +18,18 @@ body::before {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* 缩小后的 Header */
+
 #mainHeader.navbar-shrink {
   padding: 50px 0;
 }
 
-/* 导航栏缩小 */
+
 .navbar-shrink ~ .navbar .navbar-brand,
 .navbar-shrink ~ .navbar .nav-link {
   font-size: 0.9rem;
 }
 
-/* 可选：给导航栏也加个缩小效果 */
+
 .navbar {
   transition: padding 0.3s ease;
 }
