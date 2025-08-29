@@ -5,27 +5,109 @@ layout: default
 
 
 <script>
-    // 页面加载时默认显示“学术活动”
-    document.addEventListener('DOMContentLoaded', function() {
-      loadContent('portfolio');
+  // 页面加载时默认显示“学术活动”
+  document.addEventListener('DOMContentLoaded', function() {
+    loadContent('portfolio');
+  });
+
+  // 切换内容的函数
+  function loadContent(sectionId) {
+    // ✅ 确保 'showcase' 在这里
+    const sections = ['portfolio', 'timeline', 'showcase','join', 'team', 'teacher', 'about'];
+    sections.forEach(id => {
+      const el = document.getElementById(id + '-content');
+      if (el) el.style.display = 'none';
     });
-  
-    // 切换内容的函数
-    function loadContent(sectionId) {
-      // 隐藏所有内容块
-      const sections = ['portfolio', 'timeline', 'join', 'team', 'teacher', 'about'];
-      sections.forEach(id => {
-        const el = document.getElementById(id + '-content');
-        if (el) el.style.display = 'none';
-      });
-  
-      // 显示目标块
-      const target = document.getElementById(sectionId + '-content');
-      if (target) {
-        target.style.display = 'block';
-      }
+
+
+    // 显示目标块
+    const target = document.getElementById(sectionId + '-content');
+    if (target) {
+      target.style.display = 'block';
     }
+
+    // 滚动到内容区顶部
+    const contentArea = document.getElementById('content-area');
+    if (contentArea) {
+      // 滚动到 content-area 的顶部，减去导航栏高度（避免被遮挡）
+      const offsetTop = contentArea.offsetTop;
+      const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+      window.scrollTo({
+        top: offsetTop - navbarHeight, // 留出导航栏空间
+        behavior: 'smooth' // 平滑滚动
+      });
+    }
+  }
+  let isFirstLoad = true;
+
+  function loadContent(sectionId) {
+    // ============ 显示内容逻辑 ============
+    const sections = ['portfolio', 'timeline', 'showcase','join', 'team', 'teacher', 'about'];
+    sections.forEach(id => {
+      const el = document.getElementById(id + '-content');
+      if (el) el.style.display = 'none';
+    });
+
+    const target = document.getElementById(sectionId + '-content');
+    if (target) {
+      target.style.display = 'block';
+    }
+    // ====================================
+
+    // ============ 滚动逻辑 ============
+    if (!isFirstLoad) {
+      const contentArea = document.getElementById('content-area');
+      const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+      window.scrollTo({
+        top: contentArea.offsetTop - navbarHeight,
+        behavior: 'smooth'
+      });
+    } else {
+      isFirstLoad = false;
+    }
+    // =================================
+  }
+    // 监听滚动事件
+  window.addEventListener('scroll', function() {
+    const header = document.getElementById('mainHeader');
+    const scrollPosition = window.scrollY;
+
+    // 当滚动超过 100px 时，添加缩小类
+    if (scrollPosition > 100) {
+      header.classList.add('navbar-shrink');
+    } else {
+      header.classList.remove('navbar-shrink');
+    }
+  });
   </script>
+
+  <style>
+    /* 默认大 Header */
+      #mainHeader {
+        padding: 120px 0 80px;
+        background-color: #fff;
+        transition: padding 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      /* 缩小后的 Header */
+      #mainHeader.navbar-shrink {
+        padding: 0px 0;
+      }
+
+      /* 导航栏缩小 */
+      .navbar-shrink ~ .navbar .navbar-brand,
+      .navbar-shrink ~ .navbar .nav-link {
+        font-size: 0.9rem;
+      }
+
+      /* 可选：给导航栏也加个缩小效果 */
+      .navbar {
+        transition: padding 0.3s ease;
+      }
+  </style>
 
 
   <body id="page-top">
@@ -119,10 +201,10 @@ layout: default
                       <i class="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img class="img-fluid" src="./assets/img/active/互联网+.jpg" alt="互联网+">
+                  <img class="img-fluid" src="./assets/img/active/互联网+.jpg" alt="">
                 </a>
                 <div class="portfolio-caption">
-                  <div style="height: 30px;"></div>
+                  <div style="height:30px;"></div>
                   <h5>中国国际大学生创新大赛</h5>
                   <p class="text-muted">Graphic Design</p>
                 </div>
@@ -387,6 +469,36 @@ layout: default
             </div>
           </div>
     </section>
+
+    <section class="page-section bg-light" id="showcase-content" style="display: none;">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">优秀作品展示</h2>
+        <h3 class="section-subheading text-muted">我们引以为傲的项目与创新成果</h3>
+      </div>
+
+      <!-- 视频演示区 -->
+      <div class="row justify-content-center">
+        <div class="col-lg-8 mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" 
+                    src=""D:\1\素材 (1)\宣传视频双语.mp4""
+                    allowfullscreen></iframe>
+          </div>
+          <h4 class="mt-3">项目名称：基于计算机视觉的植物病虫害检测与健康感知平台</h4>
+          <p>这是一个通过AI诊断算法、数据驱动决策和全周期可视化追溯，形成覆盖植物健康管理、科学养护执行与生长历程回溯的完整服务体系。</p>
+        </div>
+
+        <div class="col-lg-8 mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" 
+                    src="" 
+                    allowfullscreen></iframe>
+          </div>
+          <h4 class="mt-3">项目名称：AR校园导览平台</h4>
+          <p>基于增强现实技术的校园导航系统，支持3D建筑展示与路径指引。</p>
+        </div>
+      </div>
   
     <section class="page-section" id="join-content" style="display: none;">
         <div class="container">
@@ -407,7 +519,8 @@ layout: default
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">前端开发</div>
-                            <div class="portfolio-caption-subheading text-muted">11111111</div>
+                            <div class="portfolio-caption-subheading text-muted">创建Web页面或APP等前端界面呈现给用户的过程。
+                              通过使用HTML、CSS、JavaScript以及各种技术、框架和解决方案，前端开发实现了互联网产品的用户界面交互。</div>
                         </div>
                     </div>
                 </div>
@@ -419,7 +532,7 @@ layout: default
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">后端开发</div>
-                            <div class="portfolio-caption-subheading text-muted">1111111111</div>
+                            <div class="portfolio-caption-subheading text-muted">创建在服务器上运行的、不涉及用户界面部分的Web应用程序的过程。后端开发者使用如Java、Golang等语言及其框架、库和解决方案来实现Web应用程序的核心业务逻辑，并向外提供API，使得Web应用能够高效、安全、稳定地运行。</div>
                         </div>
                     </div>
                 </div>
@@ -431,7 +544,7 @@ layout: default
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">全栈开发</div>
-                            <div class="portfolio-caption-subheading text-muted">2222222</div>
+                            <div class="portfolio-caption-subheading text-muted">全栈开发者具备在整个技术堆栈中工作的能力，能够实现从用户界面到后台逻辑的无缝集成。</div>
                         </div>
                     </div>
                 </div>
@@ -442,7 +555,7 @@ layout: default
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">嵌入式技术</div>
-                            <div class="portfolio-caption-subheading text-muted">2222222</div>
+                            <div class="portfolio-caption-subheading text-muted">嵌入式系统正趋向于提供更生动的人机交互界面、更好的移植性和自动化、低功耗、智能化等方向发展。</div>
                         </div>
                     </div>
                 </div>
@@ -453,7 +566,7 @@ layout: default
                       </a>
                       <div class="portfolio-caption">
                           <div class="portfolio-caption-heading">算法</div>
-                          <div class="portfolio-caption-subheading text-muted">3</div>
+                          <div class="portfolio-caption-subheading text-muted">算法在计算机科学的许多领域中都有广泛的应用，例如机器学习、数据挖掘、网络安全和个性化推荐系统等。</div>
                       </div>
                   </div>
               </div>
@@ -464,7 +577,7 @@ layout: default
                     </a>
                     <div class="portfolio-caption">
                         <div class="portfolio-caption-heading">AI大模型技术</div>
-                        <div class="portfolio-caption-subheading text-muted">3</div>
+                        <div class="portfolio-caption-subheading text-muted">基于Transformer架构的人工智能模型，具备跨模态理解与生成能力。其核心特征包括参数规模巨大（通常达到千亿级）、通过海量数据进行预训练，以及支持多模态任务（如文本、图像、语音的融合）。大模型的应用领域涵盖医疗、教育、金融等多个行业。</div>
                     </div>
                 </div>
             </div>
