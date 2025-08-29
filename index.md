@@ -119,31 +119,31 @@ layout: default
   });
   </script>
 
-  <!-- <style>
-    /* 默认大 Header */
-#mainHeader {
-  padding: 120px 0 80px;
-  background-color: #fff;
-  transition: padding 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
+  <style>
+        /* 默认大 Header
+    #mainHeader {
+      padding: 120px 0 80px;
+      background-color: #fff;
+      transition: padding 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
 
-/* 缩小后的 Header */
-#mainHeader.navbar-shrink {
-  padding: 0px 0;
-}
+    /* 缩小后的 Header */
+    #mainHeader.navbar-shrink {
+      padding: 0px 0;
+    }
 
-/* 导航栏缩小 */
-.navbar-shrink ~ .navbar .navbar-brand,
-.navbar-shrink ~ .navbar .nav-link {
-  font-size: 0.9rem;
-}
+    /* 导航栏缩小 */
+    .navbar-shrink ~ .navbar .navbar-brand,
+    .navbar-shrink ~ .navbar .nav-link {
+      font-size: 0.9rem;
+    }
 
-/* 可选：给导航栏也加个缩小效果 */
-.navbar {
-  transition: padding 0.3s ease;
-}
-  </style> -->
+    /* 可选：给导航栏也加个缩小效果 */
+    .navbar {
+      transition: padding 0.3s ease;
+    } */
+  </style>
 
 
   <body id="page-top">
@@ -209,7 +209,7 @@ layout: default
                       <i class="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\挑战杯.png" alt="">
+                  <img class="img-fluid" src="assets\img\active\挑战杯.png" alt="">
                 </a>
                 <div class="portfolio-caption">
                   <div style="height: 30px;"></div>
@@ -225,7 +225,7 @@ layout: default
                       <i class="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\机器人与人工智能大赛.png" alt="">
+                  <img class="img-fluid" src="assets\img\active\机器人与人工智能大赛.png" alt="">
                 </a>
                 <div class="portfolio-caption">
                     <div style="height: 30px;"></div>
@@ -241,7 +241,7 @@ layout: default
                       <i class="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img class="img-fluid" src="C:\Users\ccc\project_1\assets\img\active\互联网+.jpg" alt="">
+                  <img class="img-fluid" src="assets\img\active\互联网+.jpg" alt="">
                 </a>
                 <div class="portfolio-caption">
                   <div style="height: 30px;"></div>  
@@ -278,7 +278,7 @@ layout: default
                 ，另一个则是“挑战杯”中国大学生创业计划竞赛。这两个项目的全国竞赛交叉轮流开展，每个项目每两年举办一届。</p>
               <img
                 class="img-fluid d-block mx-auto"
-                src="C:\Users\ccc\project_1\assets\img\active\挑战杯.png"
+                src="assets\img\active\挑战杯.png"
                 alt="image alt text"
               />
               <p><p>Use this area to describe your project. <strong>Markdown</strong> supported.</p>
@@ -332,7 +332,7 @@ layout: default
                 人工智能、智能家电、智能文化创意等多个领域，设有创新赛、应用赛、竞技赛和挑战赛等多个比赛项目</p>
               <img
                 class="img-fluid d-block mx-auto"
-                src="C:\Users\ccc\project_1\assets\img\active\机器人与人工智能大赛.png"
+                src="assets\img\active\机器人与人工智能大赛.png"
                 alt="Shirts on a hanger"
               />
               <p><p>Use this area to describe your project. <strong>Markdown</strong> supported. This entry (project1.md) uses links for the image sources. All other projects in the portfolio use local images. Both work just fine! Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -383,7 +383,7 @@ layout: default
                 项目类型有新工科、新医科、新农科、新文科，“人工智能+”等。参赛对象为全日制在校生与毕业5年内的毕业生。</p>
               <img
                 class="img-fluid d-block mx-auto"
-                src="C:\Users\ccc\project_1\assets\img\active\互联网+.jpg"
+                src="assets\img\active\互联网+.jpg"
                 alt="Keep Exploring"
               />
               <p><p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
@@ -522,7 +522,7 @@ layout: default
         <div class="col-lg-8 mb-4">
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" 
-                    src="D:\青灵智护-基于计算机视觉的植物病虫害检测与健康感知平台\演示视频.mp4"
+                    src="assets\img\active\宣传视频双语.mp4"
                     allowfullscreen></iframe>
           </div>
           <h4 class="mt-3">项目名称：基于计算机视觉的植物病虫害检测与健康感知平台</h4>
