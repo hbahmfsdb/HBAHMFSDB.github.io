@@ -664,8 +664,6 @@ layout: default
                   <i class="fab fa-github"></i>
                 </a>
               </li>
-                
-                
                 </ul>
               </div>
             </div>
