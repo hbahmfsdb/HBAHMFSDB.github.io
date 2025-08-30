@@ -522,7 +522,7 @@ layout: default
         <div class="col-lg-8 mb-4">
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" 
-                    src="assets\img\active\宣传视频双语.mp4"
+                    src="assets\img\active\演示视频.mp4"
                     allowfullscreen></iframe>
           </div>
           <h4 class="mt-3">项目名称：基于计算机视觉的植物病虫害检测与健康感知平台</h4>
