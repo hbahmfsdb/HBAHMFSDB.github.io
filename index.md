@@ -519,11 +519,14 @@ layout: default
 
       <!-- 视频演示区 -->
       <div class="row justify-content-center">
-        <div class="col-lg-8 mb-4">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" 
-                    src="assets\img\active\演示视频.mp4"
-                    allowfullscreen></iframe>
+         <div class="col-lg-8 mb-4">
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+              <iframe 
+                src="//player.bilibili.com/player.html?isOutside=true&aid=115133225373453&bvid=BV1PHaAzmEtM&cid=32107597696&p=1" 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                allowfullscreen>
+              </iframe>
+            </div>
           </div>
           <h4 class="mt-3">项目名称：基于计算机视觉的植物病虫害检测与健康感知平台</h4>
           <p>这是一个通过AI诊断算法、数据驱动决策和全周期可视化追溯，形成覆盖植物健康管理、科学养护执行与生长历程回溯的完整服务体系。</p>
