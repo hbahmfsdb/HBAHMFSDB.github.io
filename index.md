@@ -120,7 +120,7 @@ layout: default
   </script>
 
   <style>
-        /* 默认大 Header
+        
     #mainHeader {
       padding: 120px 0 80px;
       background-color: #fff;
